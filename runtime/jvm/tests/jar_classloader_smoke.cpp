@@ -1,4 +1,4 @@
-#include "opticraft_jar_classloader.h"
+#include "opticraft_method_executor.h"
 #include <cassert>
 #include <cstdint>
 #include <cstdio>
@@ -26,7 +26,7 @@ int main() {
         1,0,4,'m','a','i','n',1,0,22,'(','[','L','j','a','v','a','/','l','a','n','g','/','S','t','r','i','n','g',';',')','V',
         1,0,4,'C','o','d','e',
         0,0x21,0,2,0,4,0,0,0,0,0,1,0,9,0,5,0,6,0,1,0,7,0,0,0,13,
-  0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+  0,1,0,1,0,0,0,1,0xb1,0,0,0,0
     };
     const std::string name = "T.class";
     const uint32_t crc = static_cast<uint32_t>(crc32(0L, cls, sizeof(cls)));
@@ -77,6 +77,10 @@ int main() {
     assert(opticraft_loaded_class_find_method(
         loaded, "main", "([Ljava/lang/String;)V", nullptr, &code_length));
     assert(code_length == 1);
+    int32_t locals[1]={0},stack[1]={0};
+    const auto executed=opticraft_loaded_method_execute_i32(
+        loaded,"main","([Ljava/lang/String;)V",locals,1,stack,1,20);
+    assert(executed.status==OPTI_EXEC_RETURN_VOID);
 
     opticraft_loaded_class_destroy(loaded);
     opticraft_jar_close(archive);
