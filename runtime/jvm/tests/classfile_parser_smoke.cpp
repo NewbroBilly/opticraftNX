@@ -3,14 +3,14 @@
 #include <cstdint>
 #include <vector>
 int main(){
- // public class T { public static void main(String[] a) {} }
+ // public class T { public static int mainCode() { return 5; } }
  const uint8_t bytes[]={
   0xca,0xfe,0xba,0xbe,0,0,0,49,0,8,
   1,0,1,'T',7,0,1,1,0,16,'j','a','v','a','/','l','a','n','g','/','O','b','j','e','c','t',7,0,3,
   1,0,4,'m','a','i','n',1,0,22,'(','[','L','j','a','v','a','/','l','a','n','g','/','S','t','r','i','n','g',';',')','V',
   1,0,4,'C','o','d','e',
-  0,0x21,0,2,0,4,0,0,0,0,0,1,0,9,0,5,0,6,0,1,0,7,0,0,0,13,
-  0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+  0,0x21,0,2,0,4,0,0,0,0,0,1,0,9,0,5,0,6,0,1,0,7,0,0,0,14,
+  0,1,0,1,0,0,0,2,0x08,0xac,0,0,0,0
  };
  OptiClassFile *f=nullptr;assert(opticraft_classfile_parse(bytes,sizeof(bytes),&f));
  OptiClassSummary s{};assert(opticraft_classfile_summary(f,&s));assert(s.major_version==49&&s.methods_count==1);
