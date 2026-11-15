@@ -25,6 +25,12 @@ int opticraft_loaded_class_find_method(const OptiLoadedClass *loaded,
                                         const char *name, const char *descriptor,
                                         uint16_t *out_access_flags,
                                         uint32_t *out_code_length);
+int opticraft_loaded_class_method_code(const OptiLoadedClass *loaded,
+                                        const char *name, const char *descriptor,
+                                        const uint8_t **out_code,
+                                        uint32_t *out_code_length,
+                                        uint16_t *out_max_stack,
+                                        uint16_t *out_max_locals);
 /* Last diagnostic for a failed open/load operation; valid until the next operation. */
 const char *opticraft_jar_last_error(const OptiJar *jar);
 #ifdef __cplusplus
