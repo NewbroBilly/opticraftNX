@@ -1,0 +1,43 @@
+name: OptiCraft Java runtime foundation tests
+
+on:
+  push:
+    branches:
+      - integration/java-runtime-v151
+  workflow_dispatch:
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout integration workspace
+        uses: actions/checkout@v4
+
+      - name: Check toolchain
+        run: |
+          c++ --version
+          pkg-config --modversion zlib
+
+      - name: Platform ABI and input bridge
+        run: |
+          sh runtime/platform/tests/run_host_test.sh
+          sh runtime/input/tests/run_host_test.sh
+
+      - name: AWT and SwitchWindow native bridges
+        run: |
+          sh runtime/awt/tests/run_host_test.sh
+          sh runtime/awt/tests/run_switch_window_native_smoke.sh
+
+      - name: JVM structure, class loading and object model
+        run: |
+          sh runtime/jvm/tests/run_classfile_parser_smoke.sh
+          sh runtime/jvm/tests/run_jar_classloader_smoke.sh
+          sh runtime/jvm/tests/run_native_registry_smoke.sh
+          sh runtime/jvm/tests/run_object_runtime_smoke.sh
+
+      - name: World and asset readers
+        run: |
+          sh runtime/world/tests/run_world_anvil_chunk_test.sh
+          sh runtime/world/tests/run_world_catalog_test.sh
+          sh runtime/world/tests/run_world_preview_test.sh
+          sh runtime/world/tests/run_world_texture_loader_test.sh
