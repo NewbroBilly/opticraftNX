@@ -1,4 +1,4 @@
-#include "opticraft_classfile.h"
+#include "opticraft_method_executor.h"
 #include <cassert>
 #include <cstdint>
 #include <vector>
@@ -18,7 +18,11 @@ int main(){
  const uint8_t *method_code=nullptr;uint16_t max_stack=0,max_locals=0;
  assert(opticraft_classfile_method_code(f,"main","([Ljava/lang/String;)V",
    &method_code,&code,&max_stack,&max_locals));
- assert(code==1&&method_code[0]==0x00&&max_stack==1&&max_locals==1);
+ assert(code==2&&method_code[0]==0x08&&method_code[1]==0xac&&max_stack==1&&max_locals==1);
+ int32_t locals[1]={0},stack[1]={0};
+ auto executed=opticraft_method_execute_i32(f,"main","([Ljava/lang/String;)V",
+   locals,1,stack,1,20);
+ assert(executed.status==OPTI_EXEC_RETURN_I32&&executed.int_value==5);
  opticraft_classfile_destroy(f);assert(!opticraft_classfile_parse(bytes,8,&f));
  return 0;
 }
