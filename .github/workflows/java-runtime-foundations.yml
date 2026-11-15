@@ -34,6 +34,7 @@ jobs:
           sh runtime/jvm/tests/run_jar_classloader_smoke.sh
           sh runtime/jvm/tests/run_native_registry_smoke.sh
           sh runtime/jvm/tests/run_object_runtime_smoke.sh
+          sh runtime/jvm/tests/run_bytecode_smoke.sh
 
       - name: World and asset readers
         run: |
