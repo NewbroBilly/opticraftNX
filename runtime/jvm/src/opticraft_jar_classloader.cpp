@@ -313,6 +313,16 @@ extern "C" int opticraft_loaded_class_find_method(
                                            access_flags, code_length);
 }
 
+
+extern "C" int opticraft_loaded_class_method_code(
+    const OptiLoadedClass *loaded, const char *name, const char *descriptor,
+    const uint8_t **code, uint32_t *code_length,
+    uint16_t *max_stack, uint16_t *max_locals) {
+    return loaded != nullptr &&
+        opticraft_classfile_method_code(loaded->parsed, name, descriptor,
+                                        code, code_length, max_stack, max_locals);
+}
+
 extern "C" const char *opticraft_jar_last_error(const OptiJar *jar) {
     return jar == nullptr ? "invalid JAR handle" : jar->error.c_str();
 }
