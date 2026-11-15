@@ -6,6 +6,7 @@ c++ -std=c++17 -Wall -Wextra -Werror -Wno-misleading-indentation -pedantic -I"$R
  "$ROOT/runtime/jvm/src/opticraft_classfile.cpp" \
  "$ROOT/runtime/jvm/src/opticraft_bytecode.cpp" \
  "$ROOT/runtime/jvm/src/opticraft_method_executor.cpp" \
- "$ROOT/runtime/jvm/tests/classfile_parser_smoke.cpp" -o "$OUT"
+ "$ROOT/runtime/jvm/src/opticraft_jar_classloader.cpp" \
+ "$ROOT/runtime/jvm/tests/classfile_parser_smoke.cpp" -lz -o "$OUT"
 "$OUT"
 echo "OptiCraft classfile parser smoke: PASS"
