@@ -15,6 +15,10 @@ int main(){
  OptiClassFile *f=nullptr;assert(opticraft_classfile_parse(bytes,sizeof(bytes),&f));
  OptiClassSummary s{};assert(opticraft_classfile_summary(f,&s));assert(s.major_version==49&&s.methods_count==1);
  uint16_t flags=0;uint32_t code=99;assert(opticraft_classfile_find_method(f,"main","([Ljava/lang/String;)V",&flags,&code));assert(code==1);
+ const uint8_t *method_code=nullptr;uint16_t max_stack=0,max_locals=0;
+ assert(opticraft_classfile_method_code(f,"main","([Ljava/lang/String;)V",
+   &method_code,&code,&max_stack,&max_locals));
+ assert(code==1&&method_code[0]==0x00&&max_stack==1&&max_locals==1);
  opticraft_classfile_destroy(f);assert(!opticraft_classfile_parse(bytes,8,&f));
  return 0;
 }
