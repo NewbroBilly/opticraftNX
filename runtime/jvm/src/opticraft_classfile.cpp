@@ -51,6 +51,9 @@ struct MethodEntry {
     uint16_t name = 0;
     uint16_t descriptor = 0;
     uint32_t code_length = 0;
+    uint16_t max_stack = 0;
+    uint16_t max_locals = 0;
+    std::vector<uint8_t> code;
 };
 
 bool skip_attributes(Reader &reader, uint16_t count) {
@@ -66,16 +69,19 @@ bool skip_attributes(Reader &reader, uint16_t count) {
 }
 
 bool parse_code_attribute(Reader &reader, uint32_t attribute_length,
-                          uint32_t &code_length) {
+                          MethodEntry &method) {
     const size_t start = reader.pos;
     uint16_t max_stack;
     uint16_t max_locals;
     uint32_t bytecode_length;
     if (!reader.u2(max_stack) || !reader.u2(max_locals) ||
         !reader.u4(bytecode_length) ||
-        !reader.take(static_cast<size_t>(bytecode_length))) {
+        !range_ok(reader.pos, static_cast<size_t>(bytecode_length), reader.size)) {
         return false;
     }
+    method.code.assign(reader.bytes + reader.pos,
+                       reader.bytes + reader.pos + bytecode_length);
+    if (!reader.take(static_cast<size_t>(bytecode_length))) return false;
 
     uint16_t exception_count;
     if (!reader.u2(exception_count) ||
@@ -89,9 +95,9 @@ bool parse_code_attribute(Reader &reader, uint32_t attribute_length,
     }
 
     if (reader.pos - start != attribute_length) return false;
-    code_length = bytecode_length;
-    (void)max_stack;
-    (void)max_locals;
+    method.code_length = bytecode_length;
+    method.max_stack = max_stack;
+    method.max_locals = max_locals;
     return true;
 }
 } // namespace
@@ -267,7 +273,7 @@ extern "C" int opticraft_classfile_parse(const uint8_t *bytes, size_t length,
 
                 if (attribute_name == "Code") {
                     if (!parse_code_attribute(reader, attribute_length,
-                                              method.code_length)) {
+                                              method)) {
                         delete file;
                         return 0;
                     }
@@ -348,6 +354,30 @@ extern "C" int opticraft_classfile_find_method(
             }
             return 1;
         }
+    }
+    return 0;
+}
+
+
+extern "C" int opticraft_classfile_method_code(
+    const OptiClassFile *file, const char *name, const char *descriptor,
+    const uint8_t **out_code, uint32_t *out_code_length,
+    uint16_t *out_max_stack, uint16_t *out_max_locals) {
+    if (file == nullptr || name == nullptr || descriptor == nullptr ||
+        out_code == nullptr || out_code_length == nullptr) return 0;
+    for (const MethodEntry &method : file->methods) {
+        if (method.name >= file->constant_pool.size() ||
+            method.descriptor >= file->constant_pool.size()) continue;
+        const CpEntry &name_entry = file->constant_pool[method.name];
+        const CpEntry &desc_entry = file->constant_pool[method.descriptor];
+        if (name_entry.tag != 1 || desc_entry.tag != 1 ||
+            name_entry.text != name || desc_entry.text != descriptor ||
+            method.code.empty()) continue;
+        *out_code = method.code.data();
+        *out_code_length = method.code_length;
+        if (out_max_stack) *out_max_stack = method.max_stack;
+        if (out_max_locals) *out_max_locals = method.max_locals;
+        return 1;
     }
     return 0;
 }
