@@ -29,6 +29,13 @@ int opticraft_classfile_find_method(const OptiClassFile *file,
                                     const char *name, const char *descriptor,
                                     uint16_t *out_access_flags,
                                     uint32_t *out_code_length);
+/* Returns a borrowed pointer to Code bytes owned by file. */
+int opticraft_classfile_method_code(const OptiClassFile *file,
+                                    const char *name, const char *descriptor,
+                                    const uint8_t **out_code,
+                                    uint32_t *out_code_length,
+                                    uint16_t *out_max_stack,
+                                    uint16_t *out_max_locals);
 #ifdef __cplusplus
 }
 #endif
