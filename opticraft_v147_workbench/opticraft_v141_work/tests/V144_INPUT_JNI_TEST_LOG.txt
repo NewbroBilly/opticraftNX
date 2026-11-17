@@ -1,0 +1,1 @@
+PASS: Switch input JNI event bridge

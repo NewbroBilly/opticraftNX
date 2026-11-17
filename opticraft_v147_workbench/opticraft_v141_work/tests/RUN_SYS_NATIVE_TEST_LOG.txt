@@ -1,0 +1,1 @@
+PASS: Sys JNI ABI; version=19, pointerSize=8

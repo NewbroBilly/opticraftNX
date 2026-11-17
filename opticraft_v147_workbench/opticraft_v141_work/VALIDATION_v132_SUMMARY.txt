@@ -1,0 +1,7 @@
+PASS: run_java_thread_execution_runtime_test.sh
+PASS: run_java_thread_scheduler_test.sh
+PASS: run_jvm_execution_frames_test.sh
+PASS: run_jvm_object_interpreter_test.sh
+Integrated suite partial PASS: jvm_runtime, jvm_class_runtime, jvm_exception_runtime, jvm_execution, jvm_object_interpreter, jvm_integrated_invocation.
+Integrated suite timed out while compiling jvm_java_lang_intrinsics_test; later tests not run. No full-suite PASS claim.
+No Switch NRO build or device launch performed.

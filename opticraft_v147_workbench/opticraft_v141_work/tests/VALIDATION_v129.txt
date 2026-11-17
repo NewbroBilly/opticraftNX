@@ -1,0 +1,4 @@
+PASS tests/run_jvm_java_lang_intrinsics_test.sh
+PASS tests/run_jvm_object_interpreter_test.sh
+PASS tests/run_java_thread_scheduler_test.sh
+Scope: host-side tests only; no Switch NRO build or on-device Minecraft launch performed.

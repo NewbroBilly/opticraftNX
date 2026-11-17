@@ -1,0 +1,14 @@
+=== run_jvm_runtime_test.sh
+JVM heap/object/array/static-root/mark-sweep tests passed
+=== run_jvm_class_runtime_test.sh
+class runtime: registration, inheritance, dispatch, assignability and field layouts PASS
+=== run_jvm_exception_runtime_test.sh
+exception table lookup: typed catch, inheritance, catch-all and PC ranges PASS
+=== run_jvm_execution_test.sh
+class Code parser + interpreter PASS; methods=10 sum(100)=5050 sum_instructions=909
+=== run_jvm_object_interpreter_test.sh
+object bytecode interpreter: objects, arrays, wide locals, stack ops, instanceof and athrow handler PASS
+=== run_jvm_integrated_invocation_test.sh
+integrated JVM calls: cross-class dispatch, constructors, inherited fields and cross-frame exception handling PASS
+=== run_jvm_java_lang_intrinsics_test.sh
+Terminated

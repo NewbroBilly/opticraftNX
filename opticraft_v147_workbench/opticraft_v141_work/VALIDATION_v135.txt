@@ -1,0 +1,18 @@
+OptiCraft Switch v135 host validation
+
+PASS (individual runs):
+- tests/run_jvm_resumable_object_interpreter_test.sh
+  static nested invokestatic, instance invokevirtual, getfield, bounded step/yield, scheduler execution
+- tests/run_jvm_object_interpreter_test.sh
+- tests/run_jvm_resumable_interpreter_test.sh
+- tests/run_java_thread_execution_runtime_test.sh
+- tests/run_jvm_execution_frames_test.sh
+
+NOT PASS / INCOMPLETE:
+- tests/run_jvm_class_runtime_test.sh was terminated by the execution time limit; no result claimed.
+- Full integrated runtime suite was not completed.
+
+Not validated:
+- complete JVM/JDK compatibility
+- original Minecraft launch
+- Nintendo Switch NRO build or Horizon OS execution

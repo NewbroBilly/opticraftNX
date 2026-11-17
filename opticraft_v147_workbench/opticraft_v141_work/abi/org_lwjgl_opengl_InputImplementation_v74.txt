@@ -1,0 +1,65 @@
+Compiled from "InputImplementation.java"
+public interface org.lwjgl.opengl.InputImplementation {
+  public abstract boolean hasWheel();
+    descriptor: ()Z
+
+  public abstract int getButtonCount();
+    descriptor: ()I
+
+  public abstract void createMouse() throws org.lwjgl.LWJGLException;
+    descriptor: ()V
+
+  public abstract void destroyMouse();
+    descriptor: ()V
+
+  public abstract void pollMouse(java.nio.IntBuffer, java.nio.ByteBuffer);
+    descriptor: (Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)V
+
+  public abstract void readMouse(java.nio.ByteBuffer);
+    descriptor: (Ljava/nio/ByteBuffer;)V
+
+  public abstract void grabMouse(boolean);
+    descriptor: (Z)V
+
+  public abstract int getNativeCursorCapabilities();
+    descriptor: ()I
+
+  public abstract void setCursorPosition(int, int);
+    descriptor: (II)V
+
+  public abstract void setNativeCursor(java.lang.Object) throws org.lwjgl.LWJGLException;
+    descriptor: (Ljava/lang/Object;)V
+
+  public abstract int getMinCursorSize();
+    descriptor: ()I
+
+  public abstract int getMaxCursorSize();
+    descriptor: ()I
+
+  public abstract void createKeyboard() throws org.lwjgl.LWJGLException;
+    descriptor: ()V
+
+  public abstract void destroyKeyboard();
+    descriptor: ()V
+
+  public abstract void pollKeyboard(java.nio.ByteBuffer);
+    descriptor: (Ljava/nio/ByteBuffer;)V
+
+  public abstract void readKeyboard(java.nio.ByteBuffer);
+    descriptor: (Ljava/nio/ByteBuffer;)V
+
+  public abstract java.lang.Object createCursor(int, int, int, int, int, java.nio.IntBuffer, java.nio.IntBuffer) throws org.lwjgl.LWJGLException;
+    descriptor: (IIIIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/Object;
+
+  public abstract void destroyCursor(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)V
+
+  public abstract int getWidth();
+    descriptor: ()I
+
+  public abstract int getHeight();
+    descriptor: ()I
+
+  public abstract boolean isInsideWindow();
+    descriptor: ()Z
+}

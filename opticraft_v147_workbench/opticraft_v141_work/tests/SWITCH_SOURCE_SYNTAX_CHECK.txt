@@ -1,0 +1,7 @@
+C++ syntax-only check of switch_diagnostic_main.cpp
+Command: g++ -std=c++17 -Wall -Wextra -Werror -fsyntax-only
+Includes: local fake libnx declarations in tests/fake_switch/switch.h
+Result: exit 0
+Meaning: catches C++ syntax and local type/field consistency only.
+Limitation: fake declarations are not a substitute for compiling against the real devkitPro libnx headers.
+Real Switch build: NOT RUN.

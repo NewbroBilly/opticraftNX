@@ -1,0 +1,27 @@
+Original LWJGL BufferUtils JNI integration test
+Source archive: OptiCraft JAVA LITE 1.2.5.zip
+Library: bundled lwjgl.jar extracted from original archive
+JNI class registered: org/lwjgl/BufferUtils
+Methods registered:
+- zeroBuffer0(Ljava/nio/Buffer;JJ)V
+- getBufferAddress(Ljava/nio/Buffer;)J
+
+Host compiler: g++ (Debian 14.2.0-19) 14.2.0
+JDK: openjdk version "21.0.12.1" 2026-08-18
+
+Shared library compile: PASS
+Test compilation: PASS
+Execution: PASS
+Output: Original LWJGL BufferUtils JNI ABI: PASS
+
+Coverage:
+- actual bundled BufferUtils.zeroBuffer(ByteBuffer) calls native zeroBuffer0;
+- actual bundled BufferUtils.zeroBuffer(IntBuffer) calls native zeroBuffer0;
+- reflective invocation of actual getBufferAddress returns a non-null direct buffer address;
+- verifies only position..limit region is zeroed.
+
+Not tested:
+- Horizon OS / devkitA64 build;
+- original LWJGL Sys.loadLibrary flow on Switch;
+- GL JNI functions;
+- Java VM startup on Switch.

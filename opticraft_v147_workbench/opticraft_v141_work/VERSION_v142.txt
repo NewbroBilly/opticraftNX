@@ -1,0 +1,4 @@
+OptiCraft Switch v142 — Original Minecraft First Frame
+Host validation: original minecraft.jar reached Display.swapBuffers and produced a captured 854x480 Mojang splash frame.
+Switch NRO: not built or tested.
+Main menu: not reached.

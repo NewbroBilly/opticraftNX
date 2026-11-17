@@ -1,0 +1,51 @@
+Compiled from "Sys.java"
+public final class org.lwjgl.Sys {
+  private static final java.lang.String JNI_LIBRARY_NAME;
+    descriptor: Ljava/lang/String;
+  private static final java.lang.String VERSION;
+    descriptor: Ljava/lang/String;
+  private static final java.lang.String POSTFIX64BIT;
+    descriptor: Ljava/lang/String;
+  private static final org.lwjgl.SysImplementation implementation;
+    descriptor: Lorg/lwjgl/SysImplementation;
+  private static final boolean is64Bit;
+    descriptor: Z
+  private static void doLoadLibrary(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+
+  private static void loadLibrary(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+
+  private static org.lwjgl.SysImplementation createImplementation();
+    descriptor: ()Lorg/lwjgl/SysImplementation;
+
+  private org.lwjgl.Sys();
+    descriptor: ()V
+
+  public static java.lang.String getVersion();
+    descriptor: ()Ljava/lang/String;
+
+  public static void initialize();
+    descriptor: ()V
+
+  public static boolean is64Bit();
+    descriptor: ()Z
+
+  public static long getTimerResolution();
+    descriptor: ()J
+
+  public static long getTime();
+    descriptor: ()J
+
+  public static void alert(java.lang.String, java.lang.String);
+    descriptor: (Ljava/lang/String;Ljava/lang/String;)V
+
+  public static boolean openURL(java.lang.String);
+    descriptor: (Ljava/lang/String;)Z
+
+  public static java.lang.String getClipboard();
+    descriptor: ()Ljava/lang/String;
+
+  static {};
+    descriptor: ()V
+}

@@ -13,6 +13,14 @@ typedef struct OptiClassSummary {
     uint16_t fields_count, methods_count;
     uint16_t this_class, super_class;
 } OptiClassSummary;
+typedef struct OptiMethodReference {
+    const char *class_name;
+    uint16_t class_name_length;
+    const char *name;
+    uint16_t name_length;
+    const char *descriptor;
+    uint16_t descriptor_length;
+} OptiMethodReference;
 /* Parse a Java classfile into an owned, bounds-checked representation.
  * No bytecode is executed by this API. */
 int opticraft_classfile_parse(const uint8_t *bytes, size_t length,
@@ -36,6 +44,10 @@ int opticraft_classfile_method_code(const OptiClassFile *file,
                                     uint32_t *out_code_length,
                                     uint16_t *out_max_stack,
                                     uint16_t *out_max_locals);
+/* Resolve a CONSTANT_Methodref. Returned strings are borrowed from file. */
+int opticraft_classfile_method_ref(const OptiClassFile *file,
+                                   uint16_t constant_pool_index,
+                                   OptiMethodReference *out_reference);
 #ifdef __cplusplus
 }
 #endif

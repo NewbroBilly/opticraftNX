@@ -1,0 +1,3 @@
+class,native_method,JVM_descriptor,status,implementation_notes
+org.lwjgl.BufferUtils,zeroBuffer0,(Ljava/nio/Buffer;JJ)V,Implemented,Direct buffer only; byte offset and byte length; validates range
+org.lwjgl.BufferUtils,getBufferAddress,(Ljava/nio/Buffer;)J,Implemented,Returns direct buffer base address as jlong; rejects non-direct buffers

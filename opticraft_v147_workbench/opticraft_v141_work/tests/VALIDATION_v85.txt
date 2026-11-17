@@ -1,0 +1,4 @@
+OptiCraft Switch engineering v85 validation
+- texture_store_test: PASS (host g++, C++17, -Wall -Wextra -Werror)
+- Scope: host-side TextureStore upload/sub-upload and unpack alignment only.
+- Not tested: Horizon OS, libnx real toolchain, Switch GPU, JVM, NRO, Minecraft runtime.

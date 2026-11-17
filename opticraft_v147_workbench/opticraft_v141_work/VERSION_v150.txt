@@ -1,0 +1,1 @@
+OptiCraft Switch v150 - Host object interpreter ignores unsupported native desktop cursor construction; original client startup has no cursor exception.

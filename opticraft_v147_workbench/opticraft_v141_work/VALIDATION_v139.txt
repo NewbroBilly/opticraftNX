@@ -1,0 +1,4 @@
+v139 graphics validation: 7/7 PASS (host C++ only)
+NRO: NOT BUILT (DEVKITPRO unset; aarch64-none-elf-g++ unavailable)
+JNI GL11 registration: NOT CONNECTED
+Switch GPU backend: NOT IMPLEMENTED

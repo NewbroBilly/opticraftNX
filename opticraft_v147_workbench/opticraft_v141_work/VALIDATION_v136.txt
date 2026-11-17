@@ -1,0 +1,17 @@
+OptiCraft Switch v136 host validation
+
+PASS tests/run_jvm_resumable_object_interpreter_test.sh
+PASS tests/run_jvm_object_interpreter_test.sh
+PASS tests/run_jvm_execution_test.sh
+PASS tests/run_jvm_runtime_test.sh
+PASS tests/run_java_thread_scheduler_test.sh
+PASS tests/run_jvm_class_runtime_test.sh
+PASS tests/run_jvm_exception_runtime_test.sh
+PASS tests/run_bytecode_verifier_test.sh
+PASS tests/run_class_linker_test.sh
+PASS tests/run_awt_compatibility_test.sh
+PASS tests/run_jvm_resumable_interpreter_test.sh
+PASS tests/run_java_thread_execution_runtime_test.sh
+
+12 individual host test runners passed. Full integrated suite not run in this version.
+No Switch/NRO build or actual Minecraft launch is claimed.

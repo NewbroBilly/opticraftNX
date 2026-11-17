@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
+"${CXX:-g++}" -std=c++17 -O2 -Wall -Wextra -Werror -I"$ROOT/include" \
+ "$ROOT/src/jvm_runtime.cpp" "$ROOT/src/jvm_class_runtime.cpp" "$ROOT/src/jvm_exception_runtime.cpp" "$ROOT/tests/jvm_exception_runtime_test.cpp" -o "$TMP/test"
+"$TMP/test"

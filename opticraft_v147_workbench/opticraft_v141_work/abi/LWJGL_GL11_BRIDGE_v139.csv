@@ -1,0 +1,32 @@
+area,entrypoint,bridge_status,notes
+immediate,glBegin/glEnd,mapped,Primitive conversion and shared LegacyGLContext
+immediate,glColor3f/glColor4f,mapped,Per-vertex color
+immediate,glTexCoord2f,mapped,Per-vertex UV
+immediate,glNormal3f,mapped,Per-vertex normal stored
+immediate,glVertex3f,mapped,Immediate vertex submission
+matrix,glMatrixMode/glLoadIdentity,mapped,Modelview projection texture matrix selection
+matrix,glPushMatrix/glPopMatrix,mapped,Bounded matrix stacks
+matrix,glTranslatef/glRotatef/glScalef,mapped,Fixed-function transforms
+matrix,glOrtho,mapped,Orthographic projection
+state,glEnable/glDisable,partial,Depth blend cull texture fog lighting alpha flags; not all have raster effects
+state,glViewport/glClearColor/glClearDepth,mapped,Viewport and clear state
+state,glClear,mapped,Color and depth clear masks
+state,glDepthFunc/glBlendFunc/glAlphaFunc,mapped,Software renderer state
+texture,glGenTextures/glDeleteTextures/glBindTexture,mapped,TextureStore-backed IDs
+texture,glTexParameteri/glPixelStorei,mapped,Filter wrap and unpack alignment
+texture,glTexImage2D,mapped,Unsigned-byte formats; null allocation supported
+texture,glTexSubImage2D,mapped,Unsigned-byte formats
+arrays,glEnableClientState/glDisableClientState,mapped,Vertex color normal texcoord arrays
+arrays,glVertexPointer/glColorPointer,mapped,Host pointers only; JNI NIO decode not wired
+arrays,glNormalPointer/glTexCoordPointer,mapped,Host pointers only; JNI NIO decode not wired
+arrays,glDrawArrays/glDrawElements,mapped,Points lines triangles strips fans quads
+query,glGetError/glGetString,mapped,Compatibility identity and first-error latch
+query,glGetInteger/glGetFloat/glIsEnabled,mapped,Supported query subset
+readback,glReadPixels,partial,RGBA8 helper only; no complete format/type matrix
+platform,Display.swapBuffers/update,callback,Needs Horizon/libnx lifecycle binding
+jni,LWJGL native registration,not_connected,No original GL11 JNI native registration yet
+multitexture,GL13/ARB multitexture,unsupported,Single active texture binding in renderer
+buffers,ARB_vertex_buffer_object,unsupported,No VBO storage/bind/upload yet
+display_lists,glNewList/glCallList,unsupported,No command capture/replay yet
+advanced,lighting fog texgen pbuffer GLU,unsupported,Not implemented end-to-end
+hardware,Switch GPU backend,unsupported,Current renderer is CPU software reference

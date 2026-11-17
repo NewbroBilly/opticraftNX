@@ -409,3 +409,50 @@ extern "C" int opticraft_classfile_class_name(const OptiClassFile *file,
     *out_length = static_cast<uint16_t>(name_entry.text.size());
     return 1;
 }
+
+extern "C" int opticraft_classfile_method_ref(
+    const OptiClassFile *file, uint16_t constant_pool_index,
+    OptiMethodReference *out_reference) {
+    if (file == nullptr || out_reference == nullptr ||
+        constant_pool_index == 0 ||
+        constant_pool_index >= file->constant_pool.size()) {
+        return 0;
+    }
+
+    const CpEntry &method_ref = file->constant_pool[constant_pool_index];
+    if (method_ref.tag != 10 || method_ref.a == 0 || method_ref.b == 0 ||
+        method_ref.a >= file->constant_pool.size() ||
+        method_ref.b >= file->constant_pool.size()) {
+        return 0;
+    }
+
+    const CpEntry &class_info = file->constant_pool[method_ref.a];
+    const CpEntry &name_and_type = file->constant_pool[method_ref.b];
+    if (class_info.tag != 7 || class_info.a == 0 ||
+        class_info.a >= file->constant_pool.size() ||
+        name_and_type.tag != 12 || name_and_type.a == 0 ||
+        name_and_type.b == 0 ||
+        name_and_type.a >= file->constant_pool.size() ||
+        name_and_type.b >= file->constant_pool.size()) {
+        return 0;
+    }
+
+    const CpEntry &class_name = file->constant_pool[class_info.a];
+    const CpEntry &method_name = file->constant_pool[name_and_type.a];
+    const CpEntry &descriptor = file->constant_pool[name_and_type.b];
+    if (class_name.tag != 1 || method_name.tag != 1 || descriptor.tag != 1 ||
+        class_name.text.size() > 65535 || method_name.text.size() > 65535 ||
+        descriptor.text.size() > 65535) {
+        return 0;
+    }
+
+    *out_reference = {
+        class_name.text.c_str(),
+        static_cast<uint16_t>(class_name.text.size()),
+        method_name.text.c_str(),
+        static_cast<uint16_t>(method_name.text.size()),
+        descriptor.text.c_str(),
+        static_cast<uint16_t>(descriptor.text.size())
+    };
+    return 1;
+}

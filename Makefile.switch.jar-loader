@@ -1,0 +1,60 @@
+ifeq ($(strip $(DEVKITPRO)),)
+$(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/devkitpro")
+endif
+
+TOPDIR ?= $(CURDIR)
+include $(DEVKITPRO)/libnx/switch_rules
+
+TARGET := OptiCraft-v151-JarLoader
+BUILD := build
+SOURCES := switch_nro runtime/jvm/src
+DATA :=
+INCLUDES := include runtime/jvm/include
+NO_ICON := 1
+APP_TITLE := OptiCraft v151 Java Archive Loader
+APP_AUTHOR := OptiCraft Switch Port
+APP_VERSION := 0.1.51
+
+ARCH := -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
+CFLAGS := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES)
+CFLAGS += $(INCLUDE) -D__SWITCH__
+CXXFLAGS := $(CFLAGS) -fno-rtti -fexceptions -std=gnu++17
+CXXFLAGS += -DOPTICRAFT_SWITCH_JAR_LOADER
+ASFLAGS := -g $(ARCH)
+LDFLAGS = -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+LIBS := -lnx -lz
+LIBDIRS := $(PORTLIBS) $(LIBNX)
+
+# Build only the entrypoint, the checked classfile parser and the JAR loader.
+# The integer-only executor is deliberately not presented as a Minecraft VM.
+CPPFILES := main.cpp opticraft_classfile.cpp opticraft_jar_classloader.cpp
+
+ifneq ($(BUILD),$(notdir $(CURDIR)))
+export OUTPUT := $(CURDIR)/$(TARGET)
+export TOPDIR := $(CURDIR)
+export VPATH := $(foreach dir,$(SOURCES),$(CURDIR)/$(dir))
+export DEPSDIR := $(CURDIR)/$(BUILD)
+CFILES :=
+SFILES :=
+BINFILES :=
+OFILES_SRC := $(CPPFILES:.cpp=.o)
+OFILES := $(OFILES_SRC)
+HFILES_BIN :=
+export INCLUDE := $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+                  $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+                  -I$(CURDIR)/$(BUILD)
+export LIBPATHS := $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
+export APP_TITLE APP_AUTHOR APP_VERSION
+.PHONY: all clean
+all: $(BUILD)
+$(BUILD):
+	@[ -d $@ ] || mkdir -p $@
+	@$(MAKE) --no-print-directory -C $@ -f $(CURDIR)/Makefile all
+clean:
+	@rm -rf $(BUILD) $(TARGET).nro $(TARGET).nacp $(TARGET).elf
+else
+.PHONY: all
+all: $(OUTPUT).nro
+$(OUTPUT).nro: $(OUTPUT).elf $(OUTPUT).nacp
+$(OUTPUT).elf: $(OFILES)
+endif

@@ -1,0 +1,375 @@
+jar,class,native_declaration,JVM_descriptor
+lwjgl.jar,org.lwjgl.BufferUtils,"private static native void zeroBuffer0(java.nio.Buffer, long, long);",(Ljava/nio/Buffer;JJ)V
+lwjgl.jar,org.lwjgl.BufferUtils,static native long getBufferAddress(java.nio.Buffer);,(Ljava/nio/Buffer;)J
+lwjgl.jar,org.lwjgl.BufferUtils,public native int getJNIVersion();,()I
+lwjgl.jar,org.lwjgl.BufferUtils,public native int getPointerSize();,()I
+lwjgl.jar,org.lwjgl.BufferUtils,public native void setDebug(boolean);,(Z)V
+lwjgl.jar,org.lwjgl.openal.AL,private static native void nCreate(java.lang.String) throws org.lwjgl.LWJGLException;,(Ljava/lang/String;)V
+lwjgl.jar,org.lwjgl.openal.AL,private static native void nCreateDefault() throws org.lwjgl.LWJGLException;,()V
+lwjgl.jar,org.lwjgl.openal.AL,private static native void nDestroy();,()V
+lwjgl.jar,org.lwjgl.openal.AL,private static native void resetNativeStubs(java.lang.Class);,(Ljava/lang/Class;)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void initNativeStubs() throws org.lwjgl.LWJGLException;,()V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalEnable(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalDisable(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native boolean nalIsEnabled(int);,(I)Z
+lwjgl.jar,org.lwjgl.openal.AL10,static native boolean nalGetBoolean(int);,(I)Z
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGetInteger(int);,(I)I
+lwjgl.jar,org.lwjgl.openal.AL10,static native float nalGetFloat(int);,(I)F
+lwjgl.jar,org.lwjgl.openal.AL10,static native double nalGetDouble(int);,(I)D
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGetIntegerv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGetFloatv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGetDoublev(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGetError();,()I
+lwjgl.jar,org.lwjgl.openal.AL10,static native boolean nalIsExtensionPresent(java.lang.String);,(Ljava/lang/String;)Z
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGetEnumValue(java.lang.String);,(Ljava/lang/String;)I
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalListeneri(int, int);",(II)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalListenerf(int, float);",(IF)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalListenerfv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalListener3f(int, float, float, float);",(IFFF)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGetListeneri(int);,(I)I
+lwjgl.jar,org.lwjgl.openal.AL10,static native float nalGetListenerf(int);,(I)F
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGetListenerfv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGenSources(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGenSources2(int);,(I)I
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalDeleteSources(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalDeleteSources2(int, int);",(II)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native boolean nalIsSource(int);,(I)Z
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourcei(int, int, int);",(III)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourcef(int, int, float);",(IIF)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourcefv(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSource3f(int, int, float, float, float);",(IIFFF)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native int nalGetSourcei(int, int);",(II)I
+lwjgl.jar,org.lwjgl.openal.AL10,"static native float nalGetSourcef(int, int);",(II)F
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGetSourcefv(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourcePlayv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourcePausev(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourceStopv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourceRewindv(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalSourcePlay(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalSourcePause(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalSourceStop(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalSourceRewind(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalGenBuffers(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native int nalGenBuffers2(int);,(I)I
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalDeleteBuffers(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalDeleteBuffers2(int, int);",(II)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native boolean nalIsBuffer(int);,(I)Z
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalBufferData(int, int, long, int, int);",(IIJII)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native int nalGetBufferi(int, int);",(II)I
+lwjgl.jar,org.lwjgl.openal.AL10,"static native float nalGetBufferf(int, int);",(II)F
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourceQueueBuffers(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourceQueueBuffers2(int, int, int);",(III)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native void nalSourceUnqueueBuffers(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.openal.AL10,"static native int nalSourceUnqueueBuffers2(int, int);",(II)I
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalDistanceModel(int);,(I)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalDopplerFactor(float);,(F)V
+lwjgl.jar,org.lwjgl.openal.AL10,static native void nalDopplerVelocity(float);,(F)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglClientActiveTextureARB(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglActiveTextureARB(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord1fARB(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord1dARB(int, double, long);",(IDJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord1iARB(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord1sARB(int, short, long);",(ISJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord2fARB(int, float, float, long);",(IFFJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord2dARB(int, double, double, long);",(IDDJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord2iARB(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord2sARB(int, short, short, long);",(ISSJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord3fARB(int, float, float, float, long);",(IFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord3dARB(int, double, double, double, long);",(IDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord3iARB(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord3sARB(int, short, short, short, long);",(ISSSJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord4fARB(int, float, float, float, float, long);",(IFFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord4dARB(int, double, double, double, double, long);",(IDDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord4iARB(int, int, int, int, int, long);",(IIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBMultitexture,"static native void nglMultiTexCoord4sARB(int, short, short, short, short, long);",(ISSSSJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglGenQueriesARB(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglDeleteQueriesARB(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native boolean nglIsQueryARB(int, long);",(IJ)Z
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglBeginQueryARB(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglEndQueryARB(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglGetQueryivARB(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglGetQueryObjectivARB(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.ARBOcclusionQuery,"static native void nglGetQueryObjectuivARB(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglAccum(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglAlphaFunc(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClearColor(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClearAccum(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClear(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCallLists(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCallList(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglBlendFunc(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglBitmap(int, int, float, float, float, float, long, long);",(IIFFFFJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglBitmapBO(int, int, float, float, float, float, long, long);",(IIFFFFJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglBindTexture(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPrioritizeTextures(int, long, long, long);",(IJJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native boolean nglAreTexturesResident(int, long, long, long);",(IJJJ)Z
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglBegin(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglEnd(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglArrayElement(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClearDepth(double, long);",(DJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDeleteLists(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDeleteTextures(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCullFace(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCopyTexSubImage2D(int, int, int, int, int, int, int, int, long);",(IIIIIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCopyTexSubImage1D(int, int, int, int, int, int, long);",(IIIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCopyTexImage2D(int, int, int, int, int, int, int, int, long);",(IIIIIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCopyTexImage1D(int, int, int, int, int, int, int, long);",(IIIIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglCopyPixels(int, int, int, int, int, long);",(IIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColorPointer(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColorPointerBO(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColorMaterial(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColorMask(boolean, boolean, boolean, boolean, long);",(ZZZZJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor3b(byte, byte, byte, long);",(BBBJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor3f(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor3d(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor3ub(byte, byte, byte, long);",(BBBJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor4b(byte, byte, byte, byte, long);",(BBBBJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor4f(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor4d(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglColor4ub(byte, byte, byte, byte, long);",(BBBBJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClipPlane(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglClearStencil(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalPoint1(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalPoint2(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalMesh1(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalMesh2(int, int, int, int, int, long);",(IIIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalCoord1f(float, long);",(FJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalCoord1d(double, long);",(DJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalCoord2f(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEvalCoord2d(double, double, long);",(DDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEnableClientState(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDisableClientState(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEnable(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDisable(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEdgeFlagPointer(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEdgeFlagPointerBO(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglEdgeFlag(boolean, long);",(ZJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawPixels(int, int, int, int, long, long);",(IIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawPixelsBO(int, int, int, int, long, long);",(IIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawElements(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawElementsBO(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawBuffer(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDrawArrays(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDepthRange(double, double, long);",(DDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDepthMask(boolean, long);",(ZJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglDepthFunc(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFeedbackBuffer(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapfv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapfvBO(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapuiv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapuivBO(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapusv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPixelMapusvBO(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetMaterialfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetMaterialiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetMapfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetMapdv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetMapiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetLightfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetLightiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native int nglGetError(long);,(J)I
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetClipPlane(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetBooleanv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetDoublev(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetFloatv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetIntegerv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGenTextures(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native int nglGenLists(int, long);",(IJ)I
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFrustum(double, double, double, double, double, double, long);",(DDDDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFrontFace(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFogf(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFogi(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFogfv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglFogiv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglFlush(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglFinish(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native boolean nglIsEnabled(int, long);",(IJ)Z
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglInterleavedArrays(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglInterleavedArraysBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglInitNames(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglHint(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexParameterfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexParameteriv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexLevelParameterfv(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexLevelParameteriv(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexImage(int, int, int, int, long, long);",(IIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexImageBO(int, int, int, int, long, long);",(IIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexGeniv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexGenfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexGendv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexEnviv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetTexEnvfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPolygonStipple(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglGetPolygonStippleBO(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native boolean nglIsList(int, long);",(IJ)Z
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMaterialf(int, int, float, long);",(IIFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMateriali(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMaterialfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMaterialiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMapGrid1f(int, float, float, long);",(IFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMapGrid1d(int, double, double, long);",(IDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMapGrid2f(int, float, float, int, float, float, long);",(IFFIFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMapGrid2d(int, double, double, int, double, double, long);",(IDDIDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMap2f(int, float, float, int, int, float, float, int, int, long, long);",(IFFIIFFIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMap2d(int, double, double, int, int, double, double, int, int, long, long);",(IDDIIDDIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMap1f(int, float, float, int, int, long, long);",(IFFIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMap1d(int, double, double, int, int, long, long);",(IDDIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLogicOp(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLoadName(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLoadMatrixf(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLoadMatrixd(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglLoadIdentity(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglListBase(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLineWidth(float, long);",(FJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLineStipple(int, short, long);",(ISJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightModelf(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightModeli(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightModelfv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightModeliv(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightf(int, int, float, long);",(IIFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLighti(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglLightiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native boolean nglIsTexture(int, long);",(IJ)Z
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMatrixMode(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPolygonStipple(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPolygonStippleBO(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPolygonOffset(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPolygonMode(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPointSize(float, long);",(FJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelZoom(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelTransferf(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelTransferi(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelStoref(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelStorei(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapfvBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapuiv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapuivBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapusv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPixelMapusvBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPassThrough(float, long);",(FJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglOrtho(double, double, double, double, double, double, long);",(DDDDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormalPointer(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormalPointerBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormal3b(byte, byte, byte, long);",(BBBJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormal3f(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormal3d(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNormal3i(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglNewList(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglEndList(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMultMatrixf(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglMultMatrixd(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglShadeModel(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglSelectBuffer(int, long, long);",(IJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglScissor(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglScalef(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglScaled(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRotatef(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRotated(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native int nglRenderMode(int, long);",(IJ)I
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRectf(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRectd(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRecti(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglReadPixels(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglReadPixelsBO(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglReadBuffer(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos2f(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos2d(double, double, long);",(DDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos2i(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos3f(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos3d(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos3i(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos4f(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos4d(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglRasterPos4i(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPushName(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglPopName(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglPushMatrix(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglPopMatrix(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPushClientAttrib(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglPopClientAttrib(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglPushAttrib(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,static native void nglPopAttrib(long);,(J)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglStencilFunc(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertexPointer(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertexPointerBO(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex2f(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex2d(double, double, long);",(DDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex2i(int, int, long);",(IIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex3f(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex3d(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex3i(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex4f(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex4d(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglVertex4i(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTranslatef(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTranslated(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexImage1D(int, int, int, int, int, int, int, long, long);",(IIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexImage1DBO(int, int, int, int, int, int, int, long, long);",(IIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexImage2D(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexImage2DBO(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexSubImage1D(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexSubImage1DBO(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexSubImage2D(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexSubImage2DBO(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexParameterf(int, int, float, long);",(IIFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexParameteri(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexParameterfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexParameteriv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGenf(int, int, float, long);",(IIFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGend(int, int, double, long);",(IIDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGenfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGendv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGeni(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexGeniv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexEnvf(int, int, float, long);",(IIFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexEnvi(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexEnvfv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexEnviv(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoordPointer(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoordPointerBO(int, int, int, long, long);",(IIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord1f(float, long);",(FJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord1d(double, long);",(DJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord2f(float, float, long);",(FFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord2d(double, double, long);",(DDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord3f(float, float, float, long);",(FFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord3d(double, double, double, long);",(DDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord4f(float, float, float, float, long);",(FFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglTexCoord4d(double, double, double, double, long);",(DDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglStencilOp(int, int, int, long);",(IIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglStencilMask(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL11,"static native void nglViewport(int, int, int, int, long);",(IIIIJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglActiveTexture(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglClientActiveTexture(int, long);",(IJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage1D(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage1DBO(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage2D(int, int, int, int, int, int, int, long, long);",(IIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage2DBO(int, int, int, int, int, int, int, long, long);",(IIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage3D(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexImage3DBO(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage1D(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage1DBO(int, int, int, int, int, int, long, long);",(IIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage2D(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage2DBO(int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage3D(int, int, int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglCompressedTexSubImage3DBO(int, int, int, int, int, int, int, int, int, int, long, long);",(IIIIIIIIIIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglGetCompressedTexImage(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglGetCompressedTexImageBO(int, int, long, long);",(IIJJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord1f(int, float, long);",(IFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord1d(int, double, long);",(IDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord2f(int, float, float, long);",(IFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord2d(int, double, double, long);",(IDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord3f(int, float, float, float, long);",(IFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord3d(int, double, double, double, long);",(IDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord4f(int, float, float, float, float, long);",(IFFFFJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultiTexCoord4d(int, double, double, double, double, long);",(IDDDDJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglLoadTransposeMatrixf(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglLoadTransposeMatrixd(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultTransposeMatrixf(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglMultTransposeMatrixd(long, long);",(JJ)V
+lwjgl.jar,org.lwjgl.opengl.GL13,"static native void nglSampleCoverage(float, boolean, long);",(FZJ)V
+lwjgl.jar,org.lwjgl.opengl.GLContext,private static native long ngetFunctionAddress(long);,(J)J
+lwjgl.jar,org.lwjgl.opengl.GLContext,private static native void nLoadOpenGLLibrary() throws org.lwjgl.LWJGLException;,()V
+lwjgl.jar,org.lwjgl.opengl.GLContext,private static native void nUnloadOpenGLLibrary();,()V
+lwjgl.jar,org.lwjgl.opengl.GLContext,static native void resetNativeStubs(java.lang.Class);,(Ljava/lang/Class;)V

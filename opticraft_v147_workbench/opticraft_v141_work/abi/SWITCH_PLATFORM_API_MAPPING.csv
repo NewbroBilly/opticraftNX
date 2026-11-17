@@ -1,0 +1,7 @@
+Subsystem,libnx area,candidate API,porting implication
+Контроллер/кнопки,libnx HID,hidInitialize / hidGet...States,Подходит как источник событий Switch; нужна таблица преобразования в LWJGL Keyboard/Mouse.
+Экран/слой,VI + NWindow,"viInitialize, viOpenDefaultDisplay, nwindowCreate, nwindowSetSwapInterval",Окно/слой и буферный вывод; не предоставляет совместимость OpenGL 1.x.
+Framebuffer,libnx framebuffer,"framebufferCreate, framebufferBegin, framebufferEnd",Путь вывода пикселей/тестового кадра; не заменяет 3D renderer.
+GPU низкого уровня,libnx Nvidia,"nvGpuInit, nvGpuChannelCreate, nvAddressSpaceCreate/Map",Низкоуровневые GPU-примитивы; полноценный рендерер потребует отдельного command/state backend.
+Звук,audout,"audoutInitialize, audoutOpenAudioOut, audoutAppendAudioOutBuffer",Кандидат для PCM-вывода; требуется декодирование/микширование OpenAL в PCM.
+Файлы,libnx FS/devices,romfs/sdmc device APIs,"Нужен единый VFS mapping для ресурсов JAR, конфигов и сохранений."

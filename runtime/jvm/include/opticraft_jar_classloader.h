@@ -16,6 +16,10 @@ void opticraft_jar_close(OptiJar *jar);
  * The returned class is owned by the caller and must be destroyed. */
 int opticraft_jar_load_class(OptiJar *jar, const char *internal_name,
                              OptiLoadedClass **out_class);
+/* Loads a sibling class from the same archive retained by loaded. */
+int opticraft_loaded_class_load_sibling(const OptiLoadedClass *loaded,
+                                         const char *internal_name,
+                                         OptiLoadedClass **out_class);
 void opticraft_loaded_class_destroy(OptiLoadedClass *loaded);
 int opticraft_loaded_class_summary(const OptiLoadedClass *loaded,
                                     OptiClassSummary *out_summary);
@@ -31,6 +35,9 @@ int opticraft_loaded_class_method_code(const OptiLoadedClass *loaded,
                                         uint32_t *out_code_length,
                                         uint16_t *out_max_stack,
                                         uint16_t *out_max_locals);
+int opticraft_loaded_class_method_ref(const OptiLoadedClass *loaded,
+                                      uint16_t constant_pool_index,
+                                      OptiMethodReference *out_reference);
 /* Last diagnostic for a failed open/load operation; valid until the next operation. */
 const char *opticraft_jar_last_error(const OptiJar *jar);
 #ifdef __cplusplus

@@ -1,0 +1,5 @@
+OptiCraft Switch v139
+LWJGL 2 / OpenGL 1.1 compatibility bridge milestone
+Base: v138
+Scope: host-side API facade over LegacyGLContext + software framebuffer.
+Not a complete LWJGL native implementation and not a Switch GPU backend.

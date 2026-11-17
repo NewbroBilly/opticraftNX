@@ -1,0 +1,7 @@
+Validation summary (re-run before packaging)
+- Generic JNI test script exit: 0
+- Generic JNI test output: BufferUtils JNI bridge tests: PASS
+- Original LWJGL ABI test script exit: 0
+- Original LWJGL ABI test output: Original LWJGL BufferUtils JNI ABI: PASS
+- Input adapter host test exit: 0
+- Switch target build: NOT RUN (devkitA64 unavailable)

@@ -1,0 +1,66 @@
+name: Build OptiCraft Switch Java archive loader
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "OptiCraft_Switch_v151_Switch_Jar_Loader.zip"
+      - "Makefile.switch.jar-loader"
+      - "switch_nro/main.cpp"
+      - "runtime/jvm/include/**"
+      - "runtime/jvm/src/opticraft_classfile.cpp"
+      - "runtime/jvm/src/opticraft_jar_classloader.cpp"
+      - ".github/workflows/build-switch-jar-loader.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkita64:latest
+    env:
+      DEVKITPRO: /opt/devkitpro
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify toolchain and install zlib
+        run: |
+          test -x "$DEVKITPRO/devkitA64/bin/aarch64-none-elf-g++"
+          test -f "$DEVKITPRO/libnx/switch_rules"
+          test -x "$DEVKITPRO/tools/bin/elf2nro"
+          if [ ! -f "$DEVKITPRO/portlibs/switch/lib/libz.a" ]; then
+            dkp-pacman -S --noconfirm switch-zlib
+          fi
+          test -f "$DEVKITPRO/portlibs/switch/include/zlib.h"
+          test -f "$DEVKITPRO/portlibs/switch/lib/libz.a"
+
+      - name: Assemble loader source
+        run: |
+          mkdir -p source
+          unzip -q OptiCraft_Switch_v151_Switch_Jar_Loader.zip -d source
+          test -f source/opticraft_v141_work/src/switch_jvm_loader_main.cpp
+          cp Makefile.switch.jar-loader source/opticraft_v141_work/Makefile
+          cp -R switch_nro source/opticraft_v141_work/switch_nro
+          mkdir -p source/opticraft_v141_work/runtime
+          cp -R runtime/jvm source/opticraft_v141_work/runtime/jvm
+
+      - name: Build SD-card Java archive loader NRO
+        working-directory: source/opticraft_v141_work
+        run: |
+          export PATH="$DEVKITPRO/devkitA64/bin:$DEVKITPRO/tools/bin:$PATH"
+          make clean
+          make -j2 V=1
+          test -s OptiCraft-v151-JarLoader.nro
+          test "$(wc -c < OptiCraft-v151-JarLoader.nro)" -gt 1000
+          ls -lh OptiCraft-v151-JarLoader.nro
+
+      - name: Upload NRO artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OptiCraft-v151-JarLoader-NRO
+          path: source/opticraft_v141_work/OptiCraft-v151-JarLoader.nro
+          if-no-files-found: error
+          retention-days: 14

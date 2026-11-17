@@ -1,0 +1,1 @@
+PASS: LWJGL InputImplementation Java adapter

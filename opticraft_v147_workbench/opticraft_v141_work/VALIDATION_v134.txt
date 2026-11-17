@@ -1,0 +1,15 @@
+OptiCraft Switch v134 validation (host)
+
+PASS (individually completed):
+- tests/run_jvm_resumable_interpreter_test.sh
+- tests/run_java_thread_execution_runtime_test.sh
+- tests/run_jvm_execution_test.sh
+- tests/run_jvm_object_interpreter_test.sh (completed in an earlier isolated run)
+- tests/run_java_thread_scheduler_test.sh
+- tests/run_jvm_execution_frames_test.sh
+- tests/run_switch_awt_host_test.sh
+- tests/run_awt_compatibility_test.sh
+
+A combined batch was attempted; it exceeded the execution time limit after the first four scripts. This is not a full integrated-suite PASS.
+
+Not validated: Switch NRO build, Horizon OS runtime, original Minecraft launch.

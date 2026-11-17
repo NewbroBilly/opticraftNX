@@ -1,0 +1,3 @@
+OptiCraft Switch engineering checkpoint v143
+Focus: Nintendo Switch controller mapping for the LWJGL 2 input adapter.
+Base: v142 original-JAR first-frame host probe.

@@ -1,0 +1,3 @@
+OptiCraft Switch v138
+VM-wide class initialization state registry
+Base: v137

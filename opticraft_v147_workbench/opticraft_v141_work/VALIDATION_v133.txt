@@ -1,0 +1,5 @@
+PASS tests/run_java_thread_scheduler_test.sh
+PASS tests/run_java_thread_execution_runtime_test.sh
+PASS tests/run_jvm_object_interpreter_test.sh
+PASS tests/run_jvm_execution_test.sh
+Scope: host-side C++ tests only; no Switch NRO build or device launch performed.

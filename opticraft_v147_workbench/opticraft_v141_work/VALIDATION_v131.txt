@@ -1,0 +1,15 @@
+PASS run_jvm_runtime_test.sh
+PASS run_jvm_class_runtime_test.sh
+PASS run_jvm_exception_runtime_test.sh
+PASS run_jvm_execution_test.sh
+PASS run_jvm_object_interpreter_test.sh
+PASS run_java_thread_scheduler_test.sh
+PASS run_jvm_execution_frames_test.sh
+PASS run_bytecode_verifier_test.sh
+PASS run_class_linker_test.sh
+PASS run_awt_compatibility_test.sh
+NOT PASS run_jvm_java_lang_intrinsics_test.sh (timed out / did not complete)
+NOT RUN run_classfile_inspector_test.sh (missing /mnt/data/OptiCraft JAVA LITE 1.2.5.zip)
+NOT COMPLETE run_integrated_runtime_suite.sh
+NOT BUILT Nintendo Switch NRO
+NOT TESTED Nintendo Switch hardware launch

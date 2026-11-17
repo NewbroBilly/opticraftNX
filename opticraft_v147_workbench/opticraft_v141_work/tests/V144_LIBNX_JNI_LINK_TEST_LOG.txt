@@ -1,0 +1,2 @@
+PASS: Switch input JNI event bridge
+PASS: libnx backend + JNI polling hook link and run against mock libnx

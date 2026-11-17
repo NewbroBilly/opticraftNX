@@ -1,0 +1,5 @@
+OptiCraft Switch v137
+Runtime Exceptions + Class Initialization
+Base: v136 Object Runtime Expansion
+Platform validation: host C++ tests only
+Nintendo Switch NRO/game launch: not verified

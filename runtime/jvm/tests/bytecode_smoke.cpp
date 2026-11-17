@@ -14,7 +14,7 @@ int main(){
  assert(r.status==OPTI_EXEC_ERROR&&r.error==OPTI_EXEC_ERR_DIVIDE_BY_ZERO);
  const uint8_t unsupported[]={0xb8,0,0,0xb1};
  r=opticraft_bytecode_execute_i32(unsupported,sizeof(unsupported),locals,4,stack,16,100);
- assert(r.status==OPTI_EXEC_ERROR&&r.error==OPTI_EXEC_ERR_OPCODE);
+ assert(r.status==OPTI_EXEC_ERROR&&r.error==OPTI_EXEC_ERR_METHOD_REF);
  const uint8_t loop[]={0x84,0,1,0x1a,0x10,4,0xa1,0xff,0xfa,0x1a,0xac};
  locals[0]=0;r=opticraft_bytecode_execute_i32(loop,sizeof(loop),locals,4,stack,16,100);
  assert(r.status==OPTI_EXEC_RETURN_I32&&r.int_value==4);

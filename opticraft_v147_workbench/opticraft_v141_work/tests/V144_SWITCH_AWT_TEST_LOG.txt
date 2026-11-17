@@ -1,0 +1,1 @@
+Switch AWT window state and framebuffer forwarding PASS

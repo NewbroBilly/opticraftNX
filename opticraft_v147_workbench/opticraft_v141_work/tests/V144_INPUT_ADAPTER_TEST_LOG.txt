@@ -1,0 +1,1 @@
+PASS: Switch controller mapping and edge-triggered events

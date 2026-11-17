@@ -1,0 +1,6 @@
+OptiCraft Switch v140 validation
+- LWJGL graphics suite: PASS (7/7)
+- Integrated runtime suite: PARTIAL; timeout at run_jvm_resumable_object_interpreter_test.sh after preceding tests passed
+- Switch target build: NOT RUN (devkitA64/libnx availability not established)
+- Original Minecraft first frame: NOT VERIFIED
+- Main menu: NOT VERIFIED

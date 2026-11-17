@@ -1,0 +1,2 @@
+PASS: LWJGL InputImplementation Java adapter
+PASS: launcher installs LWJGL input before Minecraft.main

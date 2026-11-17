@@ -1,0 +1,175 @@
+Minecraft_linked_class,Minecraft_linked_method,Java_descriptor,constant_pool_refs,candidate_native_entry,jar
+org.lwjgl.BufferUtils,createByteBuffer,(I)Ljava/nio/ByteBuffer;,3,Java wrapper / delegate / unresolved,
+org.lwjgl.BufferUtils,createFloatBuffer,(I)Ljava/nio/FloatBuffer;,3,Java wrapper / delegate / unresolved,
+org.lwjgl.BufferUtils,createIntBuffer,(I)Ljava/nio/IntBuffer;,3,Java wrapper / delegate / unresolved,
+org.lwjgl.LWJGLException,getMessage,()Ljava/lang/String;,1,Java wrapper / delegate / unresolved,
+org.lwjgl.LWJGLException,printStackTrace,()V,3,Java wrapper / delegate / unresolved,
+org.lwjgl.Sys,getVersion,()Ljava/lang/String;,3,Java wrapper / delegate / unresolved,
+org.lwjgl.Sys,openURL,(Ljava/lang/String;)Z,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Controllers,create,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Cursor,<init>,(IIIIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,destroy,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,enableRepeatEvents,(Z)V,7,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,getEventCharacter,()C,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,getEventKey,()I,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,getEventKeyState,()Z,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,getKeyName,(I)Ljava/lang/String;,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,isKeyDown,(I)Z,4,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Keyboard,next,()Z,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,create,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,destroy,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getDX,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getDY,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getEventButton,()I,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getEventButtonState,()Z,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getEventDWheel,()I,4,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getEventX,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getEventY,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getX,()I,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,getY,()I,2,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,isButtonDown,(I)Z,6,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,next,()Z,3,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,setCursorPosition,(II)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.input.Mouse,setGrabbed,(Z)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL,create,()V,1,nCreate,lwjgl.jar
+org.lwjgl.openal.AL,destroy,()V,1,nDestroy,lwjgl.jar
+org.lwjgl.openal.AL,isCreated,()Z,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alBufferData,(IILjava/nio/ByteBuffer;I)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alDeleteBuffers,(Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alDeleteSources,(Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alGenBuffers,(Ljava/nio/IntBuffer;)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alGenSources,(Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alGetError,()I,3,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alGetSourcei,(II)I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alListener,(ILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alListenerf,(IF)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSource,(IILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourcePause,(I)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourcePlay,(I)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourceQueueBuffers,(ILjava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourceRewind,(I)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourceStop,(I)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourceStop,(Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourceUnqueueBuffers,(ILjava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourcef,(IIF)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.openal.AL10,alSourcei,(III)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.ARBMultitexture,glActiveTextureARB,(I)V,1,nglActiveTextureARB,lwjgl.jar
+org.lwjgl.opengl.ARBMultitexture,glClientActiveTextureARB,(I)V,1,nglClientActiveTextureARB,lwjgl.jar
+org.lwjgl.opengl.ARBMultitexture,glMultiTexCoord2fARB,(IFF)V,1,nglMultiTexCoord2fARB,lwjgl.jar
+org.lwjgl.opengl.ARBOcclusionQuery,glBeginQueryARB,(II)V,1,nglBeginQueryARB,lwjgl.jar
+org.lwjgl.opengl.ARBOcclusionQuery,glEndQueryARB,(I)V,1,nglEndQueryARB,lwjgl.jar
+org.lwjgl.opengl.ARBOcclusionQuery,glGenQueriesARB,(Ljava/nio/IntBuffer;)V,1,nglGenQueriesARB,lwjgl.jar
+org.lwjgl.opengl.ARBOcclusionQuery,glGetQueryObjectuARB,(IILjava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.ARBVertexBufferObject,glBindBufferARB,(II)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.ARBVertexBufferObject,glBufferDataARB,(ILjava/nio/ByteBuffer;I)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.ARBVertexBufferObject,glGenBuffersARB,(Ljava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,create,()V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,create,(Lorg/lwjgl/opengl/PixelFormat;)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,destroy,()V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,getAvailableDisplayModes,()[Lorg/lwjgl/opengl/DisplayMode;,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,getDesktopDisplayMode,()Lorg/lwjgl/opengl/DisplayMode;,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,getDisplayMode,()Lorg/lwjgl/opengl/DisplayMode;,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,getDrawable,()Lorg/lwjgl/opengl/Drawable;,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,isActive,()Z,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,isCloseRequested,()Z,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,isFullscreen,()Z,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,setDisplayMode,(Lorg/lwjgl/opengl/DisplayMode;)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,setFullscreen,(Z)V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,setParent,(Ljava/awt/Canvas;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,setTitle,(Ljava/lang/String;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,setVSyncEnabled,(Z)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,swapBuffers,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Display,update,()V,3,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,<init>,(II)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,equals,(Ljava/lang/Object;)Z,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,getBitsPerPixel,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,getFrequency,()I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,getHeight,()I,4,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.DisplayMode,getWidth,()I,4,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glAlphaFunc,(IF)V,3,nglAlphaFunc,lwjgl.jar
+org.lwjgl.opengl.GL11,glBegin,(I)V,1,nglBegin,lwjgl.jar
+org.lwjgl.opengl.GL11,glBindTexture,(II)V,23,nglBindTexture,lwjgl.jar
+org.lwjgl.opengl.GL11,glBlendFunc,(II)V,24,nglBlendFunc,lwjgl.jar
+org.lwjgl.opengl.GL11,glCallList,(I)V,5,nglCallList,lwjgl.jar
+org.lwjgl.opengl.GL11,glCallLists,(Ljava/nio/IntBuffer;)V,2,nglCallLists,lwjgl.jar
+org.lwjgl.opengl.GL11,glClear,(I)V,4,nglClear,lwjgl.jar
+org.lwjgl.opengl.GL11,glClearColor,(FFFF)V,2,nglClearColor,lwjgl.jar
+org.lwjgl.opengl.GL11,glClearDepth,(D)V,1,nglClearDepth,lwjgl.jar
+org.lwjgl.opengl.GL11,glColor3f,(FFF)V,5,nglColor3f,lwjgl.jar
+org.lwjgl.opengl.GL11,glColor4f,(FFFF)V,53,nglColor4f,lwjgl.jar
+org.lwjgl.opengl.GL11,glColorMask,(ZZZZ)V,3,nglColorMask,lwjgl.jar
+org.lwjgl.opengl.GL11,glColorMaterial,(II)V,2,nglColorMaterial,lwjgl.jar
+org.lwjgl.opengl.GL11,glColorPointer,(IIIJ)V,1,nglColorPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glColorPointer,(IZILjava/nio/ByteBuffer;)V,1,nglColorPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glCopyTexSubImage2D,(IIIIIIII)V,1,nglCopyTexSubImage2D,lwjgl.jar
+org.lwjgl.opengl.GL11,glCullFace,(I)V,2,nglCullFace,lwjgl.jar
+org.lwjgl.opengl.GL11,glDeleteLists,(II)V,1,nglDeleteLists,lwjgl.jar
+org.lwjgl.opengl.GL11,glDeleteTextures,(Ljava/nio/IntBuffer;)V,2,nglDeleteTextures,lwjgl.jar
+org.lwjgl.opengl.GL11,glDepthFunc,(I)V,7,nglDepthFunc,lwjgl.jar
+org.lwjgl.opengl.GL11,glDepthMask,(Z)V,11,nglDepthMask,lwjgl.jar
+org.lwjgl.opengl.GL11,glDisable,(I)V,49,nglDisable,lwjgl.jar
+org.lwjgl.opengl.GL11,glDisableClientState,(I)V,1,nglDisableClientState,lwjgl.jar
+org.lwjgl.opengl.GL11,glDrawArrays,(III)V,1,nglDrawArrays,lwjgl.jar
+org.lwjgl.opengl.GL11,glEnable,(I)V,47,nglEnable,lwjgl.jar
+org.lwjgl.opengl.GL11,glEnableClientState,(I)V,1,nglEnableClientState,lwjgl.jar
+org.lwjgl.opengl.GL11,glEnd,()V,1,nglEnd,lwjgl.jar
+org.lwjgl.opengl.GL11,glEndList,()V,5,nglEndList,lwjgl.jar
+org.lwjgl.opengl.GL11,glFinish,()V,1,nglFinish,lwjgl.jar
+org.lwjgl.opengl.GL11,glFlush,()V,1,nglFlush,lwjgl.jar
+org.lwjgl.opengl.GL11,glFog,(ILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glFogf,(IF)V,1,nglFogf,lwjgl.jar
+org.lwjgl.opengl.GL11,glFogi,(II)V,1,nglFogi,lwjgl.jar
+org.lwjgl.opengl.GL11,glGenLists,(I)I,1,nglGenLists,lwjgl.jar
+org.lwjgl.opengl.GL11,glGenTextures,(Ljava/nio/IntBuffer;)V,1,nglGenTextures,lwjgl.jar
+org.lwjgl.opengl.GL11,glGetError,()I,2,nglGetError,lwjgl.jar
+org.lwjgl.opengl.GL11,glGetFloat,(ILjava/nio/FloatBuffer;)V,3,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glGetInteger,(I)I,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glGetInteger,(ILjava/nio/IntBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glGetString,(I)Ljava/lang/String;,3,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glLight,(IILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glLightModel,(ILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glLineWidth,(F)V,2,nglLineWidth,lwjgl.jar
+org.lwjgl.opengl.GL11,glLoadIdentity,()V,9,nglLoadIdentity,lwjgl.jar
+org.lwjgl.opengl.GL11,glLogicOp,(I)V,1,nglLogicOp,lwjgl.jar
+org.lwjgl.opengl.GL11,glMatrixMode,(I)V,11,nglMatrixMode,lwjgl.jar
+org.lwjgl.opengl.GL11,glNewList,(II)V,5,nglNewList,lwjgl.jar
+org.lwjgl.opengl.GL11,glNormal3f,(FFF)V,6,nglNormal3f,lwjgl.jar
+org.lwjgl.opengl.GL11,glNormalPointer,(IIJ)V,1,nglNormalPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glNormalPointer,(ILjava/nio/ByteBuffer;)V,1,nglNormalPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glOrtho,(DDDDDD)V,4,nglOrtho,lwjgl.jar
+org.lwjgl.opengl.GL11,glPixelStorei,(II)V,1,nglPixelStorei,lwjgl.jar
+org.lwjgl.opengl.GL11,glPolygonOffset,(FF)V,2,nglPolygonOffset,lwjgl.jar
+org.lwjgl.opengl.GL11,glPopMatrix,()V,51,nglPopMatrix,lwjgl.jar
+org.lwjgl.opengl.GL11,glPushMatrix,()V,51,nglPushMatrix,lwjgl.jar
+org.lwjgl.opengl.GL11,glReadPixels,(IIIIIILjava/nio/ByteBuffer;)V,1,nglReadPixels,lwjgl.jar
+org.lwjgl.opengl.GL11,glRotatef,(FFFF)V,37,nglRotatef,lwjgl.jar
+org.lwjgl.opengl.GL11,glScaled,(DDD)V,1,nglScaled,lwjgl.jar
+org.lwjgl.opengl.GL11,glScalef,(FFF)V,47,nglScalef,lwjgl.jar
+org.lwjgl.opengl.GL11,glShadeModel,(I)V,8,nglShadeModel,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexCoord2f,(FF)V,1,nglTexCoord2f,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexCoordPointer,(IIIJ)V,1,nglTexCoordPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexCoordPointer,(IILjava/nio/FloatBuffer;)V,1,nglTexCoordPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexCoordPointer,(IILjava/nio/ShortBuffer;)V,1,nglTexCoordPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexGen,(IILjava/nio/FloatBuffer;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.GL11,glTexGeni,(III)V,1,nglTexGeni,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexImage2D,(IIIIIIIILjava/nio/ByteBuffer;)V,1,nglTexImage2D,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexParameterf,(IIF)V,1,nglTexParameterf,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexParameteri,(III)V,3,nglTexParameteri,lwjgl.jar
+org.lwjgl.opengl.GL11,glTexSubImage2D,(IIIIIIIILjava/nio/ByteBuffer;)V,1,nglTexSubImage2D,lwjgl.jar
+org.lwjgl.opengl.GL11,glTranslatef,(FFF)V,55,nglTranslatef,lwjgl.jar
+org.lwjgl.opengl.GL11,glVertex3f,(FFF)V,1,nglVertex3f,lwjgl.jar
+org.lwjgl.opengl.GL11,glVertexPointer,(IIIJ)V,1,nglVertexPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glVertexPointer,(IILjava/nio/FloatBuffer;)V,1,nglVertexPointer,lwjgl.jar
+org.lwjgl.opengl.GL11,glViewport,(IIII)V,5,nglViewport,lwjgl.jar
+org.lwjgl.opengl.GL13,glActiveTexture,(I)V,1,nglActiveTexture,lwjgl.jar
+org.lwjgl.opengl.GL13,glClientActiveTexture,(I)V,1,nglClientActiveTexture,lwjgl.jar
+org.lwjgl.opengl.GL13,glMultiTexCoord2f,(IFF)V,1,nglMultiTexCoord2f,lwjgl.jar
+org.lwjgl.opengl.GLContext,getCapabilities,()Lorg/lwjgl/opengl/ContextCapabilities;,6,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Pbuffer,<init>,(IILorg/lwjgl/opengl/PixelFormat;Lorg/lwjgl/opengl/Drawable;)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.Pbuffer,makeCurrent,()V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.PixelFormat,<init>,()V,2,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.PixelFormat,<init>,(IIII)V,1,Java wrapper / delegate / unresolved,
+org.lwjgl.opengl.PixelFormat,withDepthBits,(I)Lorg/lwjgl/opengl/PixelFormat;,1,Java wrapper / delegate / unresolved,
+org.lwjgl.util.glu.GLU,gluErrorString,(I)Ljava/lang/String;,2,Java wrapper / delegate / unresolved,
+org.lwjgl.util.glu.GLU,gluPerspective,(FFFF)V,3,Java wrapper / delegate / unresolved,
+org.lwjgl.util.glu.GLU,gluUnProject,(FFFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z,1,Java wrapper / delegate / unresolved,

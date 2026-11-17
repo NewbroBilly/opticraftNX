@@ -1,0 +1,31 @@
+In file included from /mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp:1:
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/include/switch_input_bridge.hpp:28:36: error: stray ‘\’ in program
+   28 |     int mouse_x_ = 0, mouse_y_ = 0;\n    bool touch_was_down_ = false;
+      |                                    ^
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/include/switch_input_bridge.hpp:28:37: error: ‘n’ does not name a type
+   28 |     int mouse_x_ = 0, mouse_y_ = 0;\n    bool touch_was_down_ = false;
+      |                                     ^
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp: In member function ‘void opti::SwitchInputBridge::update(const opti::ControllerFrame&, int, int, int, int, bool)’:
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp:58:14: error: ‘touch_was_down_’ was not declared in this scope; did you mean ‘touch_down’?
+   58 |         if (!touch_was_down_) {
+      |              ^~~~~~~~~~~~~~~
+      |              touch_down
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp:62:16: error: ‘touch_was_down_’ was not declared in this scope; did you mean ‘touch_down’?
+   62 |     } else if (touch_was_down_) {
+      |                ^~~~~~~~~~~~~~~
+      |                touch_down
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp:66:5: error: ‘touch_was_down_’ was not declared in this scope; did you mean ‘touch_down’?
+   66 |     touch_was_down_ = touch_down;
+      |     ^~~~~~~~~~~~~~~
+      |     touch_down
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp: In member function ‘void opti::SwitchInputBridge::reset()’:
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge.cpp:81:81: error: ‘touch_was_down_’ was not declared in this scope
+   81 |     adapter_.reset(); pending_.clear(); keys_=0; mouse_=0; mouse_x_=mouse_y_=0; touch_was_down_=false;
+      |                                                                                 ^~~~~~~~~~~~~~~
+In file included from /mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/src/switch_input_bridge_jni.cpp:1:
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/include/switch_input_bridge.hpp:28:36: error: stray ‘\’ in program
+   28 |     int mouse_x_ = 0, mouse_y_ = 0;\n    bool touch_was_down_ = false;
+      |                                    ^
+/mnt/data/OptiCraft_Switch_Completion_v74/OptiCraft_Switch_Engineering_v63/include/switch_input_bridge.hpp:28:37: error: ‘n’ does not name a type
+   28 |     int mouse_x_ = 0, mouse_y_ = 0;\n    bool touch_was_down_ = false;
+      |                                     ^

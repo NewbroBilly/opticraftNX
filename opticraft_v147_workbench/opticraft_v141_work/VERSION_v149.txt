@@ -1,0 +1,1 @@
+OptiCraft Switch v149 - RenderEngine atlas classification fixed using active resource path; host original client checks pass.

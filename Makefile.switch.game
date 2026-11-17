@@ -1,0 +1,65 @@
+ifeq ($(strip $(DEVKITPRO)),)
+$(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/devkitpro")
+endif
+
+TOPDIR ?= $(CURDIR)
+include $(DEVKITPRO)/libnx/switch_rules
+
+TARGET := OptiCraft-v152-Original-Game
+BUILD := build
+SOURCES := switch_nro src include
+DATA :=
+INCLUDES := include
+NO_ICON := 1
+APP_TITLE := OptiCraft Java Lite 1.2.5
+APP_AUTHOR := OptiCraft Switch Port
+APP_VERSION := 0.1.52
+
+ARCH := -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
+CFLAGS := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES)
+CFLAGS += $(INCLUDE) -D__SWITCH__
+CXXFLAGS := $(CFLAGS) -fexceptions -std=gnu++17 -DOPTICRAFT_SWITCH_GAME
+ASFLAGS := -g $(ARCH)
+LDFLAGS = -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+LIBS := -lnx -lpng -lz
+LIBDIRS := $(PORTLIBS) $(LIBNX)
+
+# Full original-client host interpreter, software GL renderer and libnx input.
+CPPFILES := main.cpp \
+    class_code_parser.cpp java_runtime_bootstrap.cpp jvm_runtime.cpp \
+    jvm_class_runtime.cpp jvm_exception_runtime.cpp \
+    jvm_object_interpreter.cpp gl_compat_core.cpp client_arrays.cpp \
+    software_renderer.cpp texture_store.cpp gl_texture_api.cpp \
+    legacy_gl_context.cpp lwjgl_gl11_bridge.cpp switch_awt_host.cpp \
+    input_adapter.cpp switch_input_bridge.cpp switch_interpreter_input.cpp \
+    framebuffer_blit.cpp switch_game_platform.cpp
+
+ifneq ($(BUILD),$(notdir $(CURDIR)))
+export OUTPUT := $(CURDIR)/$(TARGET)
+export TOPDIR := $(CURDIR)
+export VPATH := $(foreach dir,$(SOURCES),$(CURDIR)/$(dir))
+export DEPSDIR := $(CURDIR)/$(BUILD)
+CFILES :=
+SFILES :=
+BINFILES :=
+OFILES_SRC := $(CPPFILES:.cpp=.o)
+OFILES := $(OFILES_SRC)
+HFILES_BIN :=
+export INCLUDE := $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
+                  $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+                  -I$(CURDIR)/$(BUILD)
+export LIBPATHS := $(foreach dir,$(LIBDIRS),-L$(dir)/lib)
+export APP_TITLE APP_AUTHOR APP_VERSION
+.PHONY: all clean
+all: $(BUILD)
+$(BUILD):
+	@[ -d $@ ] || mkdir -p $@
+	@$(MAKE) --no-print-directory -C $@ -f $(CURDIR)/Makefile all
+clean:
+	@rm -rf $(BUILD) $(TARGET).nro $(TARGET).nacp $(TARGET).elf
+else
+.PHONY: all
+all: $(OUTPUT).nro
+$(OUTPUT).nro: $(OUTPUT).elf $(OUTPUT).nacp
+$(OUTPUT).elf: $(OFILES)
+endif

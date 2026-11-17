@@ -1,0 +1,29 @@
+OptiCraft Switch v147 — Original Java 1.2.5 Main Menu Milestone
+
+Baseline: v146 startup diagnostics + original OptiCraft JAVA LITE 1.2.5 package.
+
+This milestone reaches and captures the actual original Minecraft Java 1.2.5
+main menu in the host-side JVM interpreter. The screenshot is captured from the
+original minecraft.jar execution; it is not a replacement or drawn mock screen.
+
+Key changes:
+- Fast deterministic initialization of the original gk sine lookup table.
+- Host texture upload fast path for the common no-mipmap/no-AA configuration.
+- Java 6 Locale defaults and Calendar locale-data compatibility.
+- Class.getFields / Field.getType reflection support and Class.equals.
+- JVM ConstantValue initialization for static fields.
+- NIO direct-buffer metadata, FloatBuffer views and matrix upload support.
+- Host LWJGL DisplayImplementation and display-mode compatibility.
+- Charset lookup compatibility for common charsets.
+- Interned ldc String and Class constants to reduce heap pressure.
+
+Host tests confirmed:
+- tests/run_jvm_object_interpreter_test.sh — PASS
+- tests/run_gl_compat_core_test.sh — PASS
+- Original game probe captured the real menu after 24,243,030 interpreted instructions
+  and 18 framebuffer presents; it then stopped on repeated string-constant allocation.
+  String/Class constant caching was added after that capture; the original probe was
+  not rerun to completion after this final cache change.
+
+This is not a Switch NRO. Nintendo Switch toolchain packaging and real-hardware
+execution remain unverified.

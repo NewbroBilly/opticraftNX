@@ -1,0 +1,8 @@
+Host-side unit test for platform-independent input adapter
+Compiler: g++ (Debian 14.2.0-19) 14.2.0
+Compile exit code: 0
+Compile stderr: (empty)
+Test exit code: 0
+Test stdout: 
+Test stderr: 
+Switch NRO build: NOT RUN (devkitA64 compiler and libnx toolchain are not installed in this environment).

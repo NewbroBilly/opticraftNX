@@ -1,0 +1,9 @@
+OptiCraft Switch engineering v86 validation
+PASS: run_gl_compat_core_test.sh
+PASS: run_input_implementation_test.sh
+PASS: run_input_jni_test.sh
+PASS: run_platform_syntax_test.sh (mock libnx API only)
+PASS: run_sys_native_test.sh
+PASS: run_texture_store_test.sh
+PASS: run_gl_texture_api_test.sh
+Not tested: Horizon OS build, Switch GPU, JVM on Switch, NRO packaging, original Minecraft runtime.

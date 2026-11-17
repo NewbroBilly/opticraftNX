@@ -1,0 +1,1 @@
+OptiCraft Switch v151 - libnx NRO loads Minecraft.class from SD minecraft.jar and reports main(String[]); bytecode execution is not included.

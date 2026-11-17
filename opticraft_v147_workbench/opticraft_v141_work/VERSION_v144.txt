@@ -1,0 +1,14 @@
+OptiCraft Switch v144
+Switch controller polling hook and LWJGL bootstrap
+
+Adds:
+- libnx controller/touch snapshot export for JNI
+- JNI pollFromHorizon() entry point
+- automatic Horizon polling from LWJGL Keyboard.poll()
+- SwitchInputBootstrap to install the custom InputImplementation into the original LWJGL 2 Keyboard/Mouse classes
+- SwitchMinecraftLauncher to install input before invoking the original Minecraft.main(String[])
+- Java 8-compatible switchport.jar build (class-file major <= 52)
+
+Validated on host and mock libnx only. No NRO build or physical Switch test.
+The custom JVM probe still stops at java/lang/Class.getDeclaredField; original
+Minecraft splash frame remains confirmed, but the main menu is not reached.

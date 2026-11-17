@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <fstream>
 #include <limits>
+#include <memory>
 #include <new>
 #include <string>
 #include <vector>
@@ -186,12 +187,17 @@ bool extract_entry(const std::vector<uint8_t> &zip, const ZipEntry &entry,
 }
 } // namespace
 
-struct OptiJar {
+struct JarArchiveData {
     std::vector<uint8_t> bytes;
+};
+
+struct OptiJar {
+    std::shared_ptr<JarArchiveData> data;
     std::string error;
 };
 
 struct OptiLoadedClass {
+    std::shared_ptr<JarArchiveData> archive;
     OptiClassFile *parsed = nullptr;
 };
 
@@ -206,6 +212,7 @@ extern "C" int opticraft_jar_open_file(const char *path,
     OptiJar *jar = new (std::nothrow) OptiJar();
     if (jar == nullptr) return 0;
     try {
+        jar->data = std::make_shared<JarArchiveData>();
         std::ifstream input(path, std::ios::binary | std::ios::ate);
         if (!input) {
             jar->error = "cannot open JAR file";
@@ -218,9 +225,9 @@ extern "C" int opticraft_jar_open_file(const char *path,
             delete jar;
             return 0;
         }
-        jar->bytes.resize(static_cast<size_t>(end));
+        jar->data->bytes.resize(static_cast<size_t>(end));
         input.seekg(0, std::ios::beg);
-        if (!input.read(reinterpret_cast<char *>(jar->bytes.data()), end)) {
+        if (!input.read(reinterpret_cast<char *>(jar->data->bytes.data()), end)) {
             jar->error = "failed to read complete JAR file";
             delete jar;
             return 0;
@@ -251,16 +258,18 @@ extern "C" int opticraft_jar_load_class(OptiJar *jar,
     try {
         ZipEntry entry;
         const std::string path = std::string(internal_name) + ".class";
-        if (!find_zip_entry(jar->bytes, path, entry, jar->error)) return 0;
+        if (jar->data == nullptr ||
+            !find_zip_entry(jar->data->bytes, path, entry, jar->error)) return 0;
 
         std::vector<uint8_t> class_bytes;
-        if (!extract_entry(jar->bytes, entry, class_bytes, jar->error)) return 0;
+        if (!extract_entry(jar->data->bytes, entry, class_bytes, jar->error)) return 0;
 
         OptiLoadedClass *loaded = new (std::nothrow) OptiLoadedClass();
         if (loaded == nullptr) {
             jar->error = "out of memory allocating class object";
             return 0;
         }
+        loaded->archive = jar->data;
         if (!opticraft_classfile_parse(class_bytes.data(), class_bytes.size(),
                                        &loaded->parsed)) {
             jar->error = "classfile parser rejected class entry";
@@ -284,6 +293,17 @@ extern "C" int opticraft_jar_load_class(OptiJar *jar,
         jar->error = "exception while loading class entry";
         return 0;
     }
+}
+
+extern "C" int opticraft_loaded_class_load_sibling(
+    const OptiLoadedClass *loaded, const char *internal_name,
+    OptiLoadedClass **out_class) {
+    if (out_class == nullptr) return 0;
+    *out_class = nullptr;
+    if (loaded == nullptr || loaded->archive == nullptr) return 0;
+    OptiJar archive_view;
+    archive_view.data = loaded->archive;
+    return opticraft_jar_load_class(&archive_view, internal_name, out_class);
 }
 
 extern "C" void opticraft_loaded_class_destroy(OptiLoadedClass *loaded) {
@@ -321,6 +341,14 @@ extern "C" int opticraft_loaded_class_method_code(
     return loaded != nullptr &&
         opticraft_classfile_method_code(loaded->parsed, name, descriptor,
                                         code, code_length, max_stack, max_locals);
+}
+
+extern "C" int opticraft_loaded_class_method_ref(
+    const OptiLoadedClass *loaded, uint16_t constant_pool_index,
+    OptiMethodReference *out_reference) {
+    return loaded != nullptr &&
+        opticraft_classfile_method_ref(loaded->parsed, constant_pool_index,
+                                       out_reference);
 }
 
 extern "C" const char *opticraft_jar_last_error(const OptiJar *jar) {

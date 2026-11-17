@@ -1,0 +1,12 @@
+OptiCraft Switch v146
+Original Minecraft startup diagnostics and exception visibility
+
+Adds:
+- Retained structured Java exception diagnostics instead of silently swallowing Throwable.printStackTrace().
+- Throwable(String) / Throwable(Throwable) constructor handling, getMessage(), getLocalizedMessage(), toString(), and printStackTrace() compatibility for the current host probe subset.
+- Captures exception type/message and active Java call frames into a bounded 64 KiB diagnostic buffer.
+- Writes the diagnostic buffer and the last 24 completed Java call frames from the original Minecraft probe.
+- Corrects host test link scripts to include the GL/PNG bridge dependencies referenced by the interpreter.
+- Original-archive-dependent tests now report SKIP when the user's OptiCraft archive is not supplied; set OPTICRAFT_ZIP to run them.
+
+Host-only milestone. This does not claim the Minecraft main menu or a Switch NRO.

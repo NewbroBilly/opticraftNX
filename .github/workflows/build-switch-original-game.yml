@@ -1,0 +1,66 @@
+name: Build OptiCraft original game NRO
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Makefile.switch.game"
+      - "switch_nro/main.cpp"
+      - "opticraft_v147_workbench/opticraft_v141_work/**"
+      - ".github/workflows/build-switch-original-game.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkita64:latest
+    env:
+      DEVKITPRO: /opt/devkitpro
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Switch PNG and ZIP dependencies
+        run: |
+          dkp-pacman -S --needed --noconfirm switch-libpng switch-zlib
+          test -x "$DEVKITPRO/devkitA64/bin/aarch64-none-elf-g++"
+          test -f "$DEVKITPRO/libnx/switch_rules"
+          test -x "$DEVKITPRO/tools/bin/elf2nro"
+          test -f "$DEVKITPRO/portlibs/switch/include/png.h"
+          test -f "$DEVKITPRO/portlibs/switch/include/zlib.h"
+
+      - name: Assemble interpreter, renderer and libnx source
+        run: |
+          mkdir -p source
+          # The workbench is the canonical checked-in source tree. Keep the
+          # CI assembly explicit so a missing historical zip cannot mask a
+          # broken source checkout.
+          cp -R opticraft_v147_workbench/opticraft_v141_work source
+          test -f source/opticraft_v141_work/src/switch_game_main.cpp
+          test -f source/opticraft_v141_work/src/switch_game_platform.cpp
+          test -f source/opticraft_v141_work/src/switch_interpreter_input.cpp
+          test -f source/opticraft_v141_work/include/java_runtime_bootstrap.hpp
+          test -f source/opticraft_v141_work/include/jvm_object_interpreter.hpp
+          cp Makefile.switch.game source/opticraft_v141_work/Makefile
+          cp -R switch_nro source/opticraft_v141_work/switch_nro
+
+      - name: Build original Minecraft runtime NRO
+        working-directory: source/opticraft_v141_work
+        run: |
+          export PATH="$DEVKITPRO/devkitA64/bin:$DEVKITPRO/tools/bin:$PATH"
+          make clean
+          make -j2 V=1
+          test -s OptiCraft-v152-Original-Game.nro
+          test "$(wc -c < OptiCraft-v152-Original-Game.nro)" -gt 100000
+          ls -lh OptiCraft-v152-Original-Game.nro
+
+      - name: Upload original-game NRO
+        uses: actions/upload-artifact@v4
+        with:
+          name: OptiCraft-v152-Original-Game-NRO
+          path: source/opticraft_v141_work/OptiCraft-v152-Original-Game.nro
+          if-no-files-found: error
+          retention-days: 14

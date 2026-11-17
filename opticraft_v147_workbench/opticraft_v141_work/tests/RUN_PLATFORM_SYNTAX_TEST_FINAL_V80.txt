@@ -1,0 +1,1 @@
+PASS: libnx platform source syntax against mock API
