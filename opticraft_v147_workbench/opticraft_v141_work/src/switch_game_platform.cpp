@@ -74,6 +74,13 @@ bool platform_should_exit(const InputSnapshot& snapshot) {
     return (snapshot.pressed & HidNpadButton_Plus) != 0 || !appletMainLoop();
 }
 
+void platform_wait_for_exit() {
+    while (appletMainLoop()) {
+        const InputSnapshot snapshot = platform_poll_input();
+        if (snapshot.pressed & HidNpadButton_Plus) break;
+    }
+}
+
 bool platform_present_rgba8(const std::uint32_t* pixels, int width, int height) {
     if (!ready || !pixels || width <= 0 || height <= 0) return false;
     u32 stride = 0;

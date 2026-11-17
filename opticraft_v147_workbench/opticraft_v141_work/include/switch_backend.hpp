@@ -15,6 +15,8 @@ bool platform_init();
 void platform_shutdown();
 InputSnapshot platform_poll_input();
 bool platform_should_exit(const InputSnapshot& input);
+// Keep a failed launch visible long enough to retrieve launch.log from SD.
+void platform_wait_for_exit();
 void platform_present_diagnostic_frame(const InputSnapshot& input);
 bool platform_present_rgba8(const std::uint32_t* pixels,int width,int height);
 }

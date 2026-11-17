@@ -195,6 +195,11 @@ int main(int argc, char** argv) {
 
     log_line(log, "OptiCraft original client shutdown");
     log.close();
+    if (exit_code != 0) {
+        // Keep the NRO open after a controlled runtime failure. This gives the
+        // user time to copy launch.log instead of dropping straight to hbmenu.
+        opti::platform_wait_for_exit();
+    }
     fsdevUnmountDevice("sdmc");
     opti::platform_shutdown();
     return exit_code;
