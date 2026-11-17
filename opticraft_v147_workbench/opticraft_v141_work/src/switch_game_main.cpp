@@ -5,6 +5,7 @@
 #include "lwjgl_gl11_bridge.hpp"
 #include "switch_awt_host.hpp"
 #include "switch_interpreter_input.hpp"
+#include "switch_backend.hpp"
 #include <cstdint>
 #include <fstream>
 #include <iterator>
