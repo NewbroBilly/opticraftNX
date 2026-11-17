@@ -41,6 +41,7 @@ CPPFILES := main.cpp \
     legacy_gl_context.cpp lwjgl_gl11_bridge.cpp switch_awt_host.cpp \
     input_adapter.cpp switch_input_bridge.cpp switch_interpreter_input.cpp \
     framebuffer_blit.cpp switch_game_platform.cpp
+OFILES := $(CPPFILES:.cpp=.o)
 
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 export OUTPUT := $(CURDIR)/$(TARGET)
@@ -51,7 +52,6 @@ CFILES :=
 SFILES :=
 BINFILES :=
 OFILES_SRC := $(CPPFILES:.cpp=.o)
-OFILES := $(OFILES_SRC)
 HFILES_BIN :=
 export INCLUDE := $(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
                   $(foreach dir,$(LIBDIRS),-I$(dir)/include) \
