@@ -132,17 +132,24 @@ bool load_runtime(opti::runtime::JvmClassRuntime& classes, std::ofstream& log) {
 int main(int argc, char** argv) {
     (void)argc;
     (void)argv;
-    if (!opti::platform_init()) return 1;
-
     const Result mount_result = fsdevMountSdmc();
     if (R_FAILED(mount_result)) {
-        opti::platform_shutdown();
         return 2;
     }
     std::ofstream log(std::string(kDataRoot) + "/launch.log",
                       std::ios::out | std::ios::trunc);
     log_line(log, "OptiCraft original client boot");
     log_line(log, "DATA_ROOT " + std::string(kDataRoot));
+
+    // Mount SD and open the diagnostic log before initializing framebuffer,
+    // HID, or the interpreter. A platform bring-up failure must be visible
+    // on the SD card instead of looking like a silent hbmenu exit.
+    if (!opti::platform_init()) {
+        log_line(log, "PLATFORM_INIT_FAILED");
+        log.close();
+        fsdevUnmountDevice("sdmc");
+        return 1;
+    }
 
     int exit_code = 0;
     opti::runtime::JvmClassRuntime classes;
