@@ -138,8 +138,15 @@ int main(int argc, char** argv) {
     }
     std::ofstream log(std::string(kDataRoot) + "/launch.log",
                       std::ios::out | std::ios::trunc);
+    if (!log) {
+        // Keep diagnostics available when the data directory itself is
+        // missing or was mistyped on the SD card.
+        log.clear();
+        log.open("sdmc:/switch/launch.log", std::ios::out | std::ios::trunc);
+    }
     log_line(log, "OptiCraft original client boot");
     log_line(log, "DATA_ROOT " + std::string(kDataRoot));
+    log_line(log, "SD_MOUNT_OK");
 
     // Mount SD and open the diagnostic log before initializing framebuffer,
     // HID, or the interpreter. A platform bring-up failure must be visible
