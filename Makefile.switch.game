@@ -15,10 +15,11 @@ APP_TITLE := OptiCraft Java Lite 1.2.5
 APP_AUTHOR := OptiCraft Switch Port
 APP_VERSION := 0.1.52
 
-# devkitA64's current GCC/binutils reject the legacy `-mtp=soft` option.
-# libnx supplies the correct TLS model for the target, so keep the ABI flags
-# limited to options accepted by the current toolchain.
-ARCH := -march=armv8-a+crc+crypto -mtune=cortex-a57 -fPIE
+# Keep the shared flags linker-safe: switch_rules passes ARCH to the linker as
+# well as the compiler, while current binutils interpret `-march`/`-mtune` as
+# part of the emulation name. The devkitA64 compiler already defaults to the
+# correct Cortex-A57 target.
+ARCH := -fPIE
 CFLAGS := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES)
 CFLAGS += $(INCLUDE) -D__SWITCH__
 CXXFLAGS := $(CFLAGS) -fexceptions -std=gnu++17 -DOPTICRAFT_SWITCH_GAME
