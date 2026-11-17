@@ -23,6 +23,10 @@ ARCH := -fPIE
 CFLAGS := -g -Wall -O2 -ffunction-sections $(ARCH) $(DEFINES)
 CFLAGS += $(INCLUDE) -D__SWITCH__
 CXXFLAGS := $(CFLAGS) -fexceptions -std=gnu++17 -DOPTICRAFT_SWITCH_GAME
+# libnx's generic rule uses $(LD) for the final link. Use the C++ driver so
+# switch.specs and the C++ runtime are processed by the compiler driver rather
+# than passed directly to bare binutils ld.
+LD := $(CXX)
 ASFLAGS := -g $(ARCH)
 LDFLAGS = -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 LIBS := -lnx -lpng -lz
