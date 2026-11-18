@@ -7,6 +7,7 @@
 #include "switch_interpreter_input.hpp"
 #include "switch_backend.hpp"
 #include <cstdint>
+#include <sys/stat.h>
 #include <fstream>
 #include <iterator>
 #include <limits>
@@ -132,10 +133,17 @@ bool load_runtime(opti::runtime::JvmClassRuntime& classes, std::ofstream& log) {
 int main(int argc, char** argv) {
     (void)argc;
     (void)argv;
+    consoleInit(nullptr);
     const Result mount_result = fsdevMountSdmc();
     if (R_FAILED(mount_result)) {
+        std::printf("OptiCraft: SD mount failed 0x%08X\n",
+                    static_cast<unsigned>(mount_result));
+        while (appletMainLoop()) consoleUpdate(nullptr);
+        consoleExit(nullptr);
         return 2;
     }
+    mkdir("sdmc:/switch", 0777);
+    mkdir(kDataRoot, 0777);
     std::ofstream log(std::string(kDataRoot) + "/launch.log",
                       std::ios::out | std::ios::trunc);
     if (!log) {
@@ -155,6 +163,7 @@ int main(int argc, char** argv) {
         log_line(log, "PLATFORM_INIT_FAILED");
         log.close();
         fsdevUnmountDevice("sdmc");
+        consoleExit(nullptr);
         return 1;
     }
 
@@ -217,5 +226,6 @@ int main(int argc, char** argv) {
     }
     fsdevUnmountDevice("sdmc");
     opti::platform_shutdown();
+    consoleExit(nullptr);
     return exit_code;
 }
